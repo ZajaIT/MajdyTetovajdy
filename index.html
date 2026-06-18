@@ -320,6 +320,10 @@ section {
   margin: 0 auto;
 }
 
+    .about-img-mobile {
+  display: none;
+}
+
     .about h3 {
       font-family: 'Playfair Display', serif;
       font-size: 30px;
@@ -674,6 +678,15 @@ textarea.error {
   .about img {
     max-width: 100%;
   }
+  .about-img-desktop {
+  display: none;
+}
+
+.about-img-mobile {
+  display: block;
+  max-width: 100%;
+  margin: 20px auto 30px;
+}
 
   .about h3 {
     font-size: 24px;
@@ -921,11 +934,15 @@ nav ul.open ~ .hamburger .icon-close {
 
   <div class="about">
 
-    <img src="majda-tetovani.webp" alt="Majda Tetovajdy">
+    <img src="majda-tetovani.webp"
+     alt="Majda Tetovajdy"
+     class="about-img-desktop">
 
     <div>
 
   <h3>Ahoj, jsem Majda</h3>
+
+      <img src="majda-tetovani.webp" alt="Majda Tetovajdy" class="about-img-mobile">
 
   <p>
     Vítám Tě na své stránce! Jsem majitelkou  malého, ale útulného salónu, kde se věnuji tetování a piercingu. O prostor se nedělím s nikým dalším - ideální prostředí pro introverty, mezi které patřím i já. Vždy jsme <strong>jen já a klient</strong>, bez dalších rušivých elementů. Pohodová a příjemná atmosféra je moji prioritou.
