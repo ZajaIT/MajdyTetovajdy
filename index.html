@@ -366,6 +366,155 @@ section {
   transition: 0.3s ease;
 }
 
+    /* REVIEWS */
+
+.reviews-rating {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.stars {
+  color: #fbbc04;
+  font-size: 32px;
+  letter-spacing: 3px;
+}
+
+.rating-score {
+  font-size: 34px;
+  font-weight: 700;
+  color: #fff;
+  margin-top: 8px;
+}
+
+.rating-count {
+  color: #aaa;
+  margin-top: 8px;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.review-card {
+  background: rgba(20,20,20,0.85);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 30px;
+}
+
+.review-stars {
+  color: #fbbc04;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+.review-card p {
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.review-card span {
+  color: #fff;
+  font-weight: 600;
+}
+
+.reviews-button {
+  text-align: center;
+  margin-top: 40px;
+}
+
+    /* REVIEWS */
+
+.google-badge {
+  text-align: center;
+  margin-top: -20px;
+  margin-bottom: 35px;
+  color: #aaa;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.google-g {
+  font-weight: 700;
+  font-size: 22px;
+  margin-right: 8px;
+
+  background: linear-gradient(
+    90deg,
+    #4285F4,
+    #EA4335,
+    #FBBC05,
+    #34A853
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.reviews-rating {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.stars {
+  color: #fbbc04;
+  font-size: 38px;
+  letter-spacing: 4px;
+}
+
+.rating-score {
+  font-size: 42px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.rating-score span {
+  font-size: 24px;
+  color: #999;
+}
+
+.rating-count {
+  margin-top: 10px;
+  color: #aaa;
+  letter-spacing: 1px;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.review-card {
+  background: rgba(20,20,20,0.85);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 30px;
+}
+
+.review-stars {
+  color: #fbbc04;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+.review-card p {
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.review-card span {
+  color: #fff;
+  font-weight: 600;
+}
+
+.reviews-button {
+  text-align: center;
+  margin-top: 40px;
+}
+
 /* PRICING */
 
 .pricing-box {
@@ -778,6 +927,14 @@ textarea.error {
     height: 260px;
   }
 
+  .reviews-grid {
+  grid-template-columns: 1fr;
+}
+
+.review-card {
+  padding: 25px;
+}
+
   /* CONTACT */
 
   .contact {
@@ -1095,6 +1252,75 @@ nav ul.open ~ .hamburger .icon-close {
   <img src="tattoo36.webp">
 
 </div>
+
+</section>
+
+  <section id="reviews">
+
+  <div class="section-title">
+    <h2>Google recenze</h2>
+  </div>
+
+    <div class="google-badge">
+  <span class="google-g">G</span>
+  <span>Ověřené recenze z Google</span>
+</div>
+
+  <div class="reviews-rating">
+
+  <div class="stars">★★★★★</div>
+
+  <div class="rating-score">
+    5,0 <span>/ 5</span>
+  </div>
+
+  <div class="rating-count">
+    116 recenzí na Google
+  </div>
+
+</div>
+
+  <div class="reviews-grid">
+
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p>
+        Děkuju moc za skvělé tetování. Jsem maximálně spokojený – perfektní práce, super přístup a příjemná atmosféra. Určitě se zase vrátím!
+      </p>
+      <span>— Robin S.</span>
+    </div>
+
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p>
+        Úžasná a profesionální práce, skvělá atmosféra, stejný vibe a humor… Tři hodiny utekly a mně se nechtělo domů. Pokud chcete něco precizního a na celý život, zajděte k Majdě, stojí to za to.
+      </p>
+      <span>— Lukáš K.</span>
+    </div>
+
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p>
+        Velmi příjemná slečna, všechno nám hezky a srozumitelně vysvětlila. Práce byla rychlá, profesionální a čistá. Prostředí bylo velmi útulné a cítila jsem se pohodlně od začátku do konce. Určitě doporučuji a moc děkuji.
+      </p>
+      <span>— Vanesa P.</span>
+    </div>
+
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p>
+        První návštěva a hned několik (i když jemných) tetování a musím říct, že naprostá spokojenost. Majda je velice milá, precizní a hlavně mám originál, který mám jen já.
+      </p>
+      <span>— Petra K.</span>
+    </div>
+
+  </div>
+
+  <div class="reviews-button">
+    <a href="https://www.google.com/search?sca_esv=6789a859e68b2844&sxsrf=ANbL-n5QE8bxNxnjWP4hp-C9Zd-DnAVOBw:1781792517490&q=majdy+tetovajdy&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOfDizdkDmIfgIVeUkAL4G_K8fR542qQSGcjwGecMkwExkG6O3dvv1UaHU2X1DvXlAYDAJvU%3D&uds=ALYpb_n_EM_B_ErB9c5NX69H4GoW75fUhSbxn1Pp6P3CNleXQQHtN6AbklPRqnWkXkPu_TxeE6qNBmpIlSQJoZN89RaCyfg68C6j_PxoEsvTIqw0Es2BBzc&sa=X&ved=2ahUKEwjs08Ww_pCVAxXQ9LsIHbu9FfQQ3PALegQIGRAE&biw=1280&bih=593&dpr=1.5" target="_blank" class="btn">
+      Zobrazit všechny recenze
+    </a>
+  </div>
 
 </section>
 
