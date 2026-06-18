@@ -1,0 +1,1454 @@
+
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Majdy Tetovajdy | Tattoo & Piercing Studio Mladá Boleslav</title>
+  <link rel="icon" href="favicon.jpeg">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+
+html {
+  scroll-behavior: smooth;
+}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+  font-family: 'Montserrat', sans-serif;
+  background: #050505;
+  color: #f1f1f1;
+  line-height: 1.7;
+}
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER */
+
+    header {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  overflow: hidden;
+}
+    .header-inner {
+  max-width: 1400px;
+  margin: auto;
+  padding: 8px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70px;
+}
+
+.social-icons {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 16px;
+}
+
+.social-icons a {
+  font-size: 30px;
+  transition: 0.3s ease;
+}
+
+.social-icons a:first-child {
+  color: #1877f2;
+}
+
+.social-icons a:last-child {
+  color: #e1306c;
+}
+
+.social-icons a:hover {
+  transform: translateY(-2px);
+}
+
+.contact-social a {
+  font-size: 36px;
+  transition: 0.3s ease;
+  margin: 0 5px;
+}
+
+.contact-social a:first-of-type {
+  color: #1877f2;
+}
+
+.contact-social a:last-of-type {
+  color: #e1306c;
+}
+
+.contact-social a:hover {
+  transform: translateY(-2px);
+}
+
+#contact {
+  position: relative;
+}
+
+.contact-bg {
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  width: 1400px;
+  height: 700px;
+
+  background: url("pozadi.webp") center center / contain no-repeat;
+
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.contact {
+  position: relative;
+  z-index: 2;
+}
+
+    .logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: transform .3s;
+}
+
+.logo:hover {
+  transform: translateY(-2px);
+}
+
+    .logo img {
+      height: 60px;
+    }
+
+    .logo span {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  letter-spacing: 3px;
+  font-size: 22px;
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+  padding-bottom: 6px;
+}
+
+    nav ul {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+}
+
+    nav li {
+  text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: 2px;
+  position: relative;
+  font-weight: 600;
+  transition: .3s;
+  color: #111;
+}
+
+nav li:hover {
+  transform: translateY(-2px);
+  color: #7b43d6;
+  transform: none;
+}
+
+
+
+.logo span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s;
+}
+
+.logo:hover span::after {
+  transform: scaleX(1);
+}
+
+    /* HERO */
+
+    .hero {
+  height: 100vh;
+  width: 100%;
+  background-image: url("hero-fotka.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 100% center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  scroll-margin-top: 90px;
+  margin-top: -35px;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: none;
+  padding-left: 0;
+  margin-top: -20px;
+  text-align: left;
+}
+
+    .hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 78px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  line-height: 1;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+    .hero p {
+  color: #ccc;
+  font-size: 18px;
+}
+
+.hero-location {
+  font-size: 18px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 25px;
+}
+
+.hero-subtext {
+  font-size: 20px;
+  line-height: 1.8;
+  color: #ffffff;
+  max-width: 520px;
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 35px;
+  padding: 15px 45px;
+  border: 2px solid #fff;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #fff;
+  transition: all 0.4s ease;
+}
+
+.btn:hover {
+  background: #00a8d1;
+  border-color: #00a8d1;
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(0,207,255,.6);
+}
+
+    /* SECTIONS */
+
+section {
+  max-width: 1400px;
+  margin: auto;
+  padding: 60px 40px;
+}
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+
+    .section-title h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      letter-spacing: 4px;
+      margin-bottom: 15px;
+    }
+
+    .section-title span {
+      color: #888;
+      letter-spacing: 3px;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    /* ABOUT */
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+  margin-top: 0;
+}
+
+
+.section-title span {
+  position: relative;
+  top: -20px;
+}
+.about img {
+  border: 3px solid #fff;
+  filter: grayscale(0%);
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+    .about h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      color: #ccc;
+      margin-bottom: 15px;
+    }
+
+
+    /* GALLERY */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+   .gallery img {
+  height: 350px;
+  width: 100%;
+  object-fit: cover;
+  border: 1px solid rgba(255,255,255,0.6);
+  transition: 0.3s ease;
+}
+
+/* PRICING */
+
+.pricing-box {
+  max-width: 700px;
+  margin: 30px auto 0;
+
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 50px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.price-row:last-of-type {
+  border-bottom: none;
+}
+
+.price-row span {
+  color: #ccc;
+}
+
+.price-row strong {
+  color: #00cfff;
+  white-space: nowrap;
+}
+
+.pricing-note {
+  margin-top: 30px;
+  text-align: center;
+  color: #aaa;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* INFO */
+
+.info-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.info-content h3 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: #fff;
+}
+
+.info-content h3:first-child {
+  margin-top: 0;
+}
+
+.info-content p {
+  color: #ccc;
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+.info-box {
+  border: 2px solid rgba(255,255,255,0.75);
+  padding: 35px;
+  margin-bottom: 35px;
+  position: relative;
+}
+
+.info-box::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  height: 3px;
+
+  background: linear-gradient(
+    90deg,
+    #35d6ff,
+    #ffb347,
+    #e084ff
+  );
+}
+
+
+    /* CONTACT */
+
+.contact {
+  max-width: 700px;
+  margin: 30px auto 0;
+
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 50px;
+  text-align: center;
+}
+
+    .contact-links p {
+  margin-bottom: 28px;
+  line-height: 1.8;
+}
+
+.contact-links h3 {
+  margin-bottom: 35px;
+  letter-spacing: 2px;
+  display: inline-block;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #00cfff;
+}
+
+.contact-social {
+  margin-top: 40px;
+}
+
+
+.contact-highlight {
+  color: #00cfff;
+}
+
+    /* FOOTER */
+
+    footer {
+      background: #000;
+      border-top: 2px solid rgba(255,255,255,0.25);
+      padding: 40px;
+      text-align: center;
+    }
+
+    footer p {
+      color: #777;
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:900px){
+
+      .about,
+      .contact{
+        grid-template-columns:1fr;
+      }
+
+      .hero h1{
+        font-size:42px;
+      }
+
+      nav ul{
+        gap:20px;
+      }
+
+      .logo span{
+        display:none;
+      }
+
+    }
+
+
+/* TEXT SLIDE-IN */
+
+.hero h1,
+.hero p {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: textSlide 1s ease forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes textSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* BUTTON DELAY */
+
+.hero .btn {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: buttonFade 0.8s ease forwards;
+  animation-delay: 1.4s;
+}
+
+@keyframes buttonFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* FORM ERROR STYLE */
+
+.form-group {
+  position: relative;
+}
+
+.form-error {
+  color: #ff6b6b;
+  font-size: 12px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  display: none;
+}
+
+input.error,
+textarea.error {
+  border-color: #ff6b6b !important;
+}
+
+/* SECTION TITLE SCROLL ANIMATION */
+
+.section-title h2,
+.section-title span {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.section-title.show h2 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+
+.section-title.show span {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+    /* =====================
+   MOBILE RESPONSIVE
+   ===================== */
+
+@media (max-width: 600px) {
+
+  /* HEADER */
+
+  .header-inner {
+    padding: 10px 20px;
+    min-height: 70px;
+  }
+
+  nav ul {
+    gap: 12px;
+  }
+
+  nav li {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  .logo img {
+    height: 45px;
+  }
+
+  /* HERO */
+
+  .hero {
+    height: auto;
+    min-height: 90vh;
+    margin-top: 60px;
+    padding: 40px 20px;
+  }
+
+  .hero-content img {
+    max-width: 220px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    letter-spacing: 3px;
+    gap: 10px;
+    white-space: nowrap;
+  }
+
+  .hero p {
+    font-size: 15px;
+    padding: 0 10px;
+  }
+
+  .btn {
+    padding: 12px 30px;
+    font-size: 12px;
+  }
+
+  /* SECTIONS */
+
+  section {
+    padding: 70px 20px;
+  }
+
+  .section-title h2 {
+    font-size: 30px;
+  }
+
+  .section-title span {
+    font-size: 11px;
+  }
+
+  /* ABOUT */
+
+  .about {
+    gap: 40px;
+    margin-top: -40px;
+    text-align: center;
+  }
+
+  .about img {
+    max-width: 100%;
+  }
+
+  .about h3 {
+    font-size: 24px;
+  }
+
+  .about p {
+    font-size: 14px;
+  }
+
+
+  /* GALLERY */
+
+  .gallery {
+    grid-template-columns: 1fr;
+    margin-top: -20px;
+  }
+
+  .gallery img {
+    height: 260px;
+  }
+
+  /* CONTACT */
+
+  .contact {
+    padding: 30px 25px;
+    margin-top: -20px;
+    text-align: center;
+  }
+
+  .contact-info p {
+    font-size: 14px;
+  }
+
+.pricing-box {
+  padding: 30px 25px;
+}
+
+.price-row {
+  flex-direction: column;
+  gap: 6px;
+}
+
+
+.info-content h3 {
+  font-size: 24px;
+}
+
+  /* FOOTER */
+
+  footer {
+    padding: 25px 15px;
+  }
+
+  footer p {
+    font-size: 11px;
+  }
+
+  section:not(.hero) {
+  transform: translateY(-40px);
+}
+  #about {
+  margin-top: -60px;
+}
+
+}
+
+    /* =====================
+   MOBILE MENU
+   ===================== */
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Jen pro mobil */
+@media (max-width: 600px) {
+
+  .hamburger {
+    display: block;
+    color: #111;
+  }
+
+  nav ul {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    transition: 0.4s ease;
+    z-index: 999;
+  }
+
+  nav ul.open {
+    left: 0;
+  }
+
+  nav li {
+    font-size: 18px;
+  }
+
+}
+
+    /* HAMBURGER / CLOSE ICON */
+
+.hamburger {
+  position: relative;
+  z-index: 1001;
+}
+
+.hamburger .icon-close {
+  display: none;
+}
+
+/* Když je menu otevřené */
+nav ul.open ~ .hamburger .icon-menu {
+  display: none;
+}
+
+nav ul.open ~ .hamburger .icon-close {
+  display: inline;
+}
+
+/* Lepší pozice na mobilu */
+@media (max-width: 600px) {
+
+  .hamburger {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+  }
+
+}
+
+    /* LOGO TEXT ON MOBILE */
+
+@media (max-width: 600px) {
+
+  .logo span {
+    display: inline-block;
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+
+}
+
+    /* FIX GAP ABOVE HERO ON MOBILE */
+
+@media (max-width: 600px) {
+
+  .hero {
+    margin-top: 0;   /* zruší desktopový posun */
+  }
+
+  header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+  body {
+    padding-top: 55px;
+  }
+
+}
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+
+<header>
+  <div class="header-inner">
+
+    <nav>
+
+  <div class="hamburger" id="hamburger">
+  <span class="icon-menu">☰</span>
+  <span class="icon-close">✕</span>
+</div>
+      
+      <ul>
+        <li><a href="#home" id="menuHome">Domů</a></li>
+        <li><a href="#about">O mně</a></li>
+        <li><a href="#gallery">Galerie</a></li>
+        <li><a href="#pricing">Ceník</a></li>
+        <li><a href="#info">Info</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+    </nav>
+
+<div class="social-icons">
+  <a href="https://www.facebook.com/MajdyTetovajdy/?locale=cs_CZ"
+     target="_blank"
+     aria-label="Facebook">
+    <i class="fa-brands fa-facebook"></i>
+  </a>
+
+  <a href="https://www.instagram.com/majdy_tetovajdy"
+     target="_blank"
+     aria-label="Instagram">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+</div>
+
+  </div>
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+  <div class="hero-content">
+
+    <h1>Majdy Tetovajdy</h1>
+
+<p class="hero-location">
+  Tattoo &amp; Piercing Studio
+</p>
+
+<p class="hero-subtext">
+  Klidné soukromé studio v Mladé Boleslavi.
+</p>
+
+<p class="hero-subtext">
+  Jen já a Ty. Bez ruchu, bez spěchu a bez dalších lidí.
+</p>
+
+    <a href="#contact" class="btn">Objednat se</a>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+  <div class="about">
+
+    <img src="majda-tetovani.webp" alt="Majda Tetovajdy">
+
+    <div>
+
+  <h3>Ahoj, jsem Majda</h3>
+
+  <p>
+    Vítám Tě na své stránce! Jsem majitelkou  malého, ale útulného salónu, kde se věnuji tetování a piercingu. O prostor se nedělím s nikým dalším - ideální prostředí pro introverty, mezi které patřím i já. Vždy jsme <strong>jen já a klient</strong>, bez dalších rušivých elementů. Pohodová a příjemná atmosféra je moji prioritou.
+  </p>
+
+  <p>
+    Své první tetování mám od 16 let. Prostředí, proces a výsledek mě naprosto ohromily. V tu chvíli mi blesklo hlavou, jo, tohle je přesně ono, to by mě bavilo! Ale přišlo mi to jako něco nedosažitelného, navíc mi chyběla podpora okolí. A léta plynula...
+  </p>
+
+  <p>
+    V roce 2019 jsem si řekla - <strong>když ne teď, tak kdy?</strong> Objednala jsem si první výbavu a začala. Odnesla to velká část mého těla, kam jsem dosáhla, tam jsem tetovala. Cesta učení byla náročná, ale nakonec jsem se naplno vrhla do světa tohoto krásného tatérského povolání, které mi dělá radost každý den. A to vše díky klientům, kteří se vrací, doporučují a podle všeho jsou spokojení. <strong>Na ničem jiném nezáleží ♡</strong> 
+  </p>
+
+</div>
+
+  </div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section id="gallery">
+
+  <div class="section-title">
+    <h2>Moje práce</h2>
+  </div>
+
+  <div class="gallery">
+
+  <img src="tattoo1.webp">
+  <img src="tattoo2.webp">
+  <img src="tattoo3.webp">
+  <img src="tattoo4.webp">
+  <img src="tattoo5.webp">
+  <img src="tattoo6.webp">
+  <img src="tattoo7.webp">
+  <img src="tattoo8.webp">
+  <img src="tattoo9.webp">
+  <img src="tattoo10.webp">
+  <img src="tattoo11.webp">
+  <img src="tattoo12.webp">
+  <img src="tattoo13.webp">
+  <img src="tattoo14.webp">
+  <img src="tattoo15.webp">
+  <img src="tattoo16.webp">
+  <img src="tattoo17.webp">
+  <img src="tattoo18.webp">
+  <img src="tattoo19.webp">
+  <img src="tattoo20.webp">
+  <img src="tattoo21.webp">
+  <img src="tattoo22.webp">
+  <img src="tattoo23.webp">
+  <img src="tattoo24.webp">
+  <img src="tattoo25.webp">
+  <img src="tattoo26.webp">
+  <img src="tattoo27.webp">
+  <img src="tattoo28.webp">
+  <img src="tattoo29.webp">
+  <img src="tattoo30.webp">
+  <img src="tattoo31.webp">
+  <img src="tattoo32.webp">
+  <img src="tattoo33.webp">
+  <img src="tattoo34.webp">
+  <img src="tattoo35.webp">
+  <img src="tattoo36.webp">
+
+</div>
+
+</section>
+
+<!-- PRICING -->
+
+<section id="pricing">
+
+  <div class="section-title">
+    <h2>Ceník</h2>
+  </div>
+
+  <div class="pricing-box">
+
+    <div class="price-row">
+      <span>Minimální cena tetování</span>
+      <strong>1 500 Kč</strong>
+    </div>
+
+    <div class="price-row">
+      <span>Hojivý gel na péči o tetování</span>
+      <strong>100 Kč</strong>
+    </div>
+
+    <div class="price-row">
+      <span>Sprej na péči o čerstvý piercing</span>
+      <strong>100 Kč</strong>
+    </div>
+
+    <div class="price-row">
+      <span>Piercing včetně šperku</span>
+      <strong>900 Kč</strong>
+    </div>
+
+    <div class="price-row">
+      <span>Druhý a každý další piercing</span>
+      <strong>600 Kč</strong>
+    </div>
+
+    <p class="pricing-note">
+      Při aplikaci více piercingů najednou je péče ve spreji zdarma.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- INFO -->
+
+<section id="info">
+
+  <div class="section-title">
+    <h2>Informace</h2>
+  </div>
+<div class="info-content">
+
+  <div class="info-box">
+
+
+<h3>Záloha na rezervaci termínu</h3>
+
+<p>
+  Záloha na rezervaci termínu tetování činí
+  <strong>1 000 Kč</strong>.
+</p>
+
+<p>
+  U tetování za <strong>5 000 Kč a více</strong>
+  je záloha stanovena na
+  <strong>50 % ceny tetování</strong>.
+</p>
+
+<p>
+  Záloha je závazná a nevratná.
+  Odečítá se z celkové ceny tetování.
+</p>
+
+<p>
+  Pokud se na termín nemůžete dostavit,
+  je třeba se omluvit nejpozději den předem.
+  Následně společně domluvíme nový termín.
+</p>
+
+<p>
+  V případě nedostavení se na termín bez včasné omluvy
+  záloha propadá a naše spolupráce trvale končí.
+</p>
+
+
+  </div>
+
+  <div class="info-box">
+
+
+<h3>Korekce tetování</h3>
+
+<p>
+  V ceně tetování je zahrnuta
+  <strong>1 korekce zdarma</strong>,
+  a to v případě nedokonalostí vzniklých během hojení.
+</p>
+
+<p>
+  O potřebě korekce mě prosím informujte
+  nejpozději do <strong>1 měsíce od realizace tetování</strong>.
+</p>
+
+<p>
+  Korekce zdarma se nevztahuje na ruce od zápěstí po prsty,
+  dlaně, chodidla, obličej a předělávky.
+</p>
+
+
+  </div>
+
+  <div class="info-box">
+
+
+<h3>Důležité informace</h3>
+
+<p>
+  Aplikaci náušnic u miminek provádím do věku
+  <strong>10 měsíců</strong>.
+</p>
+
+<p>
+  Všechny typy piercingu provádím
+  <strong>kanylou</strong> - šperky nenastřeluji.
+</p>
+
+
+  </div>
+
+</div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+
+  <div class="contact-bg"></div>
+
+  <div class="contact">
+
+  <div class="contact-links">
+
+    <h3>TATTOO & PIERCING STUDIO</h3>
+
+    <p>
+
+      <a href="https://maps.app.goo.gl/hpRSF2vpjvEgBSQ1A"
+         target="_blank">
+        Jana Palacha 1021<br>
+        Mladá Boleslav
+      </a>
+    </p>
+
+    <p>
+      <strong>E-mail:</strong><br>
+      <a href="mailto:majdytetovajdy@seznam.cz" class="contact-highlight">
+  majdytetovajdy@seznam.cz
+</a>
+    </p>
+
+    <p>
+      <strong>Telefon:</strong><br>
+      <a href="tel:+420733348167" class="contact-highlight">
+  +420 733 348 167
+</a>
+    </p>
+
+    <p>
+      <strong>Otevírací doba:</strong><br>
+      Pondělí – Pátek • pouze na objednání
+    </p>
+
+    <div class="contact-social">
+
+      <p><strong>Sledujte mě na sítích</strong></p>
+
+      <a href="https://www.facebook.com/MajdyTetovajdy/?locale=cs_CZ"
+         target="_blank">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
+
+      <a href="https://www.instagram.com/majdy_tetovajdy"
+         target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <p>© Majdy Tetovajdy • All Rights Reserved</p>
+</footer>
+
+
+<script>
+  document.getElementById("scrollTop").addEventListener("click", function(e) {
+    e.preventDefault();
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
+<script>
+  document.getElementById("menuHome").addEventListener("click", function(e) {
+    e.preventDefault();
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
+<script>
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav li");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 120;
+
+    if (pageYOffset >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(li => {
+    li.classList.remove("active");
+
+    const link = li.querySelector("a");
+    if (link && link.getAttribute("href") === "#" + current) {
+      li.classList.add("active");
+    }
+  });
+});
+</script>
+
+<script>
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+window.addEventListener('load', () => {
+  window.scrollTo(0, 0);
+});
+</script>
+
+<script>
+const form = document.getElementById("contactForm");
+const fields = form.querySelectorAll("input, textarea");
+
+let wasSubmitted = false;
+
+function validateField(field) {
+  const error = field.parentElement.querySelector(".form-error");
+
+  // Pokud ještě nebyl pokus o odeslání, neukazuj chyby
+  if (!wasSubmitted) {
+    field.classList.remove("error");
+    error.style.display = "none";
+    return true;
+  }
+
+  if (!field.value.trim()) {
+    field.classList.add("error");
+    error.style.display = "block";
+    return false;
+  } else {
+    field.classList.remove("error");
+    error.style.display = "none";
+    return true;
+  }
+}
+
+// Kontrola při odeslání
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  wasSubmitted = true;
+
+  let valid = true;
+
+  fields.forEach(field => {
+    if (!validateField(field)) {
+      valid = false;
+    }
+  });
+
+  if (valid) {
+    alert("Formulář byl úspěšně odeslán ❤️");
+    form.reset();
+    wasSubmitted = false;
+  }
+});
+
+// Reakce na psaní
+fields.forEach(field => {
+  field.addEventListener("input", () => {
+    // Jen smaž chybu, ale znovu ji nevynucuj
+    if (field.value.trim()) {
+      const error = field.parentElement.querySelector(".form-error");
+      field.classList.remove("error");
+      error.style.display = "none";
+    }
+  });
+});
+
+// Automatické zvětšování textarea
+const textarea = document.getElementById("message");
+
+textarea.addEventListener("input", function () {
+  this.style.height = "auto";
+  this.style.height = this.scrollHeight + "px";
+});
+
+</script>
+
+<script>
+const sectionTitles = document.querySelectorAll(".section-title");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  },
+  {
+    threshold: 0.3
+  }
+);
+
+sectionTitles.forEach(title => {
+  observer.observe(title);
+});
+</script>
+
+<script>
+
+// Offsety jen pro problémové sekce
+const sectionOffsets = {
+  services: 120,
+  gallery: 50,
+  contact: 60
+};
+
+// Vybereme menu + tlačítko
+const scrollLinks = document.querySelectorAll(
+  "nav a[href^='#'], .btn[href^='#']"
+);
+
+scrollLinks.forEach(link => {
+
+  link.addEventListener("click", function(e) {
+
+    const id = this.getAttribute("href").substring(1);
+
+    // Domů a Studio necháme normálně
+    if (id === "home" || id === "about") {
+      return;
+    }
+
+    // Jen problematické sekce řešíme ručně
+    if (!sectionOffsets[id]) {
+      return;
+    }
+
+    e.preventDefault();
+
+    const section = document.getElementById(id);
+    if (!section) return;
+
+    const offset = sectionOffsets[id];
+
+    const y =
+      section.getBoundingClientRect().top +
+      window.pageYOffset -
+      offset;
+
+    window.scrollTo({
+      top: y,
+      behavior: "smooth"
+    });
+
+  });
+
+});
+
+</script>
+
+  <script>
+const hamburger = document.getElementById("hamburger");
+const menu = document.querySelector("nav ul");
+
+const iconMenu = hamburger.querySelector(".icon-menu");
+const iconClose = hamburger.querySelector(".icon-close");
+
+hamburger.addEventListener("click", () => {
+  menu.classList.toggle("open");
+
+  if (menu.classList.contains("open")) {
+    iconMenu.style.display = "none";
+    iconClose.style.display = "inline";
+  } else {
+    iconMenu.style.display = "inline";
+    iconClose.style.display = "none";
+  }
+});
+
+// Zavřít po kliknutí na položku
+menu.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    menu.classList.remove("open");
+    iconMenu.style.display = "inline";
+    iconClose.style.display = "none";
+  });
+});
+</script>
+
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
