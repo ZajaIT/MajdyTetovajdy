@@ -1054,6 +1054,90 @@ nav ul.open ~ .hamburger .icon-close {
   }
 
 }
+
+    /* COOKIE BANNER */
+
+#cookie-banner{
+  position:fixed;
+  left:20px;
+  right:20px;
+  bottom:20px;
+  background:rgba(20,20,20,.96);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;
+  padding:22px;
+  z-index:99999;
+  display:none;
+  backdrop-filter:blur(10px);
+}
+
+.cookie-wrapper{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:25px;
+}
+
+.cookie-text{
+  color:#ccc;
+  font-size:14px;
+  line-height:1.7;
+}
+
+.cookie-text strong{
+  color:#fff;
+}
+
+.cookie-buttons{
+  display:flex;
+  gap:12px;
+  flex-shrink:0;
+}
+
+.cookie-btn{
+  padding:12px 22px;
+  border-radius:8px;
+  border:none;
+  cursor:pointer;
+  font-family:inherit;
+  font-weight:600;
+  transition:.25s;
+}
+
+.cookie-accept{
+  background:#00cfff;
+  color:#000;
+}
+
+.cookie-accept:hover{
+  transform:translateY(-2px);
+}
+
+.cookie-decline{
+  background:#333;
+  color:#fff;
+}
+
+.cookie-decline:hover{
+  background:#444;
+}
+
+@media(max-width:700px){
+
+.cookie-wrapper{
+flex-direction:column;
+align-items:flex-start;
+}
+
+.cookie-buttons{
+width:100%;
+}
+
+.cookie-btn{
+flex:1;
+}
+
+}
   </style>
 
 <script type="application/ld+json">
@@ -1078,6 +1162,29 @@ nav ul.open ~ .hamburger .icon-close {
   "openingHours": "Mo-Fr",
   "priceRange": "$$"
 }
+</script>
+
+  <script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+gtag('consent', 'default', {
+  analytics_storage: 'denied',
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied'
+});
+</script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZJ17Y6NYSJ"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+gtag('js', new Date());
+
+gtag('config', 'G-ZJ17Y6NYSJ');
 </script>
   
 </head>
@@ -1604,76 +1711,6 @@ window.addEventListener('load', () => {
 </script>
 
 <script>
-const form = document.getElementById("contactForm");
-const fields = form.querySelectorAll("input, textarea");
-
-let wasSubmitted = false;
-
-function validateField(field) {
-  const error = field.parentElement.querySelector(".form-error");
-
-  // Pokud ještě nebyl pokus o odeslání, neukazuj chyby
-  if (!wasSubmitted) {
-    field.classList.remove("error");
-    error.style.display = "none";
-    return true;
-  }
-
-  if (!field.value.trim()) {
-    field.classList.add("error");
-    error.style.display = "block";
-    return false;
-  } else {
-    field.classList.remove("error");
-    error.style.display = "none";
-    return true;
-  }
-}
-
-// Kontrola při odeslání
-form.addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  wasSubmitted = true;
-
-  let valid = true;
-
-  fields.forEach(field => {
-    if (!validateField(field)) {
-      valid = false;
-    }
-  });
-
-  if (valid) {
-    alert("Formulář byl úspěšně odeslán ❤️");
-    form.reset();
-    wasSubmitted = false;
-  }
-});
-
-// Reakce na psaní
-fields.forEach(field => {
-  field.addEventListener("input", () => {
-    // Jen smaž chybu, ale znovu ji nevynucuj
-    if (field.value.trim()) {
-      const error = field.parentElement.querySelector(".form-error");
-      field.classList.remove("error");
-      error.style.display = "none";
-    }
-  });
-});
-
-// Automatické zvětšování textarea
-const textarea = document.getElementById("message");
-
-textarea.addEventListener("input", function () {
-  this.style.height = "auto";
-  this.style.height = this.scrollHeight + "px";
-});
-
-</script>
-
-<script>
 const sectionTitles = document.querySelectorAll(".section-title");
 
 const observer = new IntersectionObserver(
@@ -1777,6 +1814,74 @@ menu.querySelectorAll("a").forEach(link => {
 </script>
 
 
+<div id="cookie-banner">
+  <div class="cookie-wrapper">
+
+    <div class="cookie-text">
+      <strong>Cookies</strong><br>
+      Tento web používá analytické cookies pro měření návštěvnosti. Kliknutím na <strong>Přijmout</strong> souhlasíte s jejich použitím.
+    </div>
+
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-decline" id="cookieDecline">
+        Odmítnout
+      </button>
+
+      <button class="cookie-btn cookie-accept" id="cookieAccept">
+        Přijmout
+      </button>
+    </div>
+
+  </div>
+</div>
+
+    <script>
+const cookieBanner = document.getElementById("cookie-banner");
+const acceptBtn = document.getElementById("cookieAccept");
+const declineBtn = document.getElementById("cookieDecline");
+
+// zobraz banner jen pokud ještě není rozhodnuto
+if (!localStorage.getItem("cookieConsent")) {
+  cookieBanner.style.display = "block";
+}
+
+// uživatel souhlasí
+acceptBtn.addEventListener("click", () => {
+
+  localStorage.setItem("cookieConsent", "accepted");
+
+  gtag('consent', 'update', {
+    analytics_storage: 'granted',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied'
+  });
+
+  cookieBanner.style.display = "none";
+
+});
+
+// uživatel odmítne
+declineBtn.addEventListener("click", () => {
+
+  localStorage.setItem("cookieConsent", "declined");
+
+  cookieBanner.style.display = "none";
+
+});
+
+// při další návštěvě
+if (localStorage.getItem("cookieConsent") === "accepted") {
+
+  gtag('consent', 'update', {
+    analytics_storage: 'granted',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied'
+  });
+
+}
+</script>
   
 </body>
 </html>
