@@ -575,18 +575,6 @@ section {
   z-index: 2;
 }
 
-.voucher-label {
-  display: block;
-
-  margin-bottom: 12px;
-
-  color: #00cfff;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-}
-
 .voucher-content h2 {
   font-family: 'Playfair Display', serif;
   font-size: 48px;
@@ -732,7 +720,12 @@ section {
   .voucher-content h2 {
     font-size: 34px;
     letter-spacing: 2px;
+    text-align: center;
   }
+
+  .voucher-content > p:not(.voucher-note) {
+  text-align: center;
+}
 
   .voucher-intro {
     font-size: 20px;
@@ -742,11 +735,17 @@ section {
     grid-template-columns: 1fr;
     gap: 0;
     margin: 28px 0;
+    text-align: center;
   }
 
   .voucher-detail {
     padding: 15px 5px;
+    justify-content: center;
+    text-align: center;
   }
+
+  justify-content: center;
+  text-align: center;
 
   .voucher-note {
     padding-left: 15px;
@@ -1802,8 +1801,6 @@ gtag('config', 'G-ZJ17Y6NYSJ');
     </div>
 
     <div class="voucher-content">
-
-      <span class="voucher-label">Dárek podle vlastního výběru</span>
 
       <h2>Dárkové poukazy</h2>
 
