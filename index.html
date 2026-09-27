@@ -549,22 +549,6 @@ section {
   overflow: hidden;
 }
 
-.voucher-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 180px;
-  height: 3px;
-
-  background: linear-gradient(
-    90deg,
-    #35d6ff,
-    #ffb347,
-    #e084ff
-  );
-}
-
 
 /* IMAGE */
 
@@ -628,20 +612,6 @@ section {
   color: #fff;
 }
 
-.voucher-line {
-  width: 70px;
-  height: 2px;
-
-  margin-bottom: 30px;
-
-  background: linear-gradient(
-    90deg,
-    #35d6ff,
-    #ffb347,
-    #e084ff
-  );
-}
-
 .voucher-content p {
   color: #c9c9c9;
   line-height: 1.8;
@@ -655,8 +625,10 @@ section {
   margin-bottom: 15px;
 
   color: #fff !important;
-  font-family: 'Playfair Display', serif;
-  font-size: 23px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 2px;
 }
 
 
@@ -673,17 +645,11 @@ section {
 .voucher-detail {
   display: flex;
   align-items: center;
-  gap: 15px;
 
   padding: 18px;
 
   border-top: 1px solid rgba(255,255,255,.16);
   border-bottom: 1px solid rgba(255,255,255,.08);
-}
-
-.voucher-icon {
-  color: #00cfff;
-  font-size: 20px;
 }
 
 .voucher-detail small {
@@ -1870,8 +1836,6 @@ gtag('config', 'G-ZJ17Y6NYSJ');
 
       <h2>Dárkové poukazy</h2>
 
-      <div class="voucher-line"></div>
-
       <p class="voucher-intro">
         Udělejte radost dárkem, který zůstane.
       </p>
@@ -1885,7 +1849,6 @@ gtag('config', 'G-ZJ17Y6NYSJ');
       <div class="voucher-details">
 
         <div class="voucher-detail">
-          <span class="voucher-icon">✦</span>
           <div>
             <small>Minimální hodnota</small>
             <strong>1 000 Kč</strong>
@@ -1893,7 +1856,6 @@ gtag('config', 'G-ZJ17Y6NYSJ');
         </div>
 
         <div class="voucher-detail">
-          <span class="voucher-icon">✦</span>
           <div>
             <small>Platnost poukazu</small>
             <strong>6 měsíců</strong>
@@ -1904,8 +1866,8 @@ gtag('config', 'G-ZJ17Y6NYSJ');
 
       <p class="voucher-note">
         <strong>Doporučuji osobní vyzvednutí ve studiu</strong> – poukaz
-        dostanete hezky zabalený, aby měl při předání ten správný efekt.
-        Pokud se osobně zastavit nemůžete, ráda vám ho zašlu také
+        pro efekt a hezké balení.
+        Poukaz lze také zaslat
         <strong>v elektronické podobě e-mailem</strong>.
       </p>
 
