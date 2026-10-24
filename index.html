@@ -65,7 +65,7 @@ body {
   left: 0;
   width: 100%;
   z-index: 1000;
-  overflow: hidden;
+  overflow: visible;
 }
     .header-inner {
   max-width: 1400px;
@@ -201,6 +201,123 @@ nav li:hover {
   color: #7b43d6;
   transform: none;
 }
+
+    
+/* TETOVÁNÍ – ROZBALOVACÍ PODMENU */
+
+.tattoo-toggle {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  cursor: pointer;
+}
+
+.dropdown-arrow {
+  font-size: 19px;
+  line-height: 1;
+  transition: transform .3s ease;
+}
+
+.tattoo-dropdown {
+  position: relative;
+}
+
+.tattoo-submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 235px;
+  padding: 12px 0;
+  background: #fff;
+  border: 1px solid #eee;
+  box-shadow: 0 12px 30px rgba(0,0,0,.15);
+  z-index: 1100;
+}
+
+.tattoo-submenu li {
+  font-size: 12px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.tattoo-submenu a {
+  display: block;
+  padding: 11px 18px;
+  color: #111;
+  transition: color .2s ease, background .2s ease;
+}
+
+.tattoo-submenu a:hover {
+  color: #7b43d6;
+  background: #f7f7f7;
+}
+
+/* PC – otevření při najetí myší */
+@media (min-width: 601px) {
+  .tattoo-dropdown:hover .tattoo-submenu,
+  .tattoo-dropdown:focus-within .tattoo-submenu {
+    display: block;
+  }
+}
+
+/* MOBIL – podmenu uvnitř hamburgeru */
+@media (max-width: 600px) {
+  nav ul.tattoo-submenu {
+    display: none;
+    position: static;
+    width: 100%;
+    height: auto;
+    min-width: 0;
+    padding: 8px 0 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    transform: none;
+    transition: none;
+    gap: 0;
+  }
+
+  nav ul.tattoo-submenu.open {
+    display: flex;
+  }
+
+  .tattoo-dropdown {
+    text-align: center;
+  }
+
+  .tattoo-toggle {
+    margin: 0 auto;
+  }
+
+  .tattoo-submenu li {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .tattoo-submenu a {
+    padding: 7px 10px;
+  }
+
+  .tattoo-dropdown:has(.tattoo-submenu.open) .dropdown-arrow {
+    transform: rotate(180deg);
+  }
+}
+
+#tattoo,
+#black-tattoo,
+#cover-tattoo {
+  scroll-margin-top: 100px;
+}
+
 
 
 
@@ -1445,6 +1562,28 @@ flex:1;
   grid-column: 1 / span 4;
 }
 }
+
+
+nav ul.tattoo-submenu {
+  flex-direction: column;
+  gap: 0;
+}
+
+@media (max-width: 600px) {
+
+  nav > ul.open {
+    overflow-y: auto;
+    justify-content: flex-start;
+    padding: 85px 20px 35px;
+  }
+
+
+  nav ul.tattoo-submenu.open {
+    height: auto;
+    left: auto;
+  }
+}
+
   </style>
 
 <script type="application/ld+json">
@@ -1512,7 +1651,19 @@ gtag('config', 'G-ZJ17Y6NYSJ');
       <ul>
         <li><a href="#home" id="menuHome">Domů</a></li>
         <li><a href="#about">O mně</a></li>
-        <li><a href="#tattoo">Tetování</a></li>
+        
+<li class="tattoo-dropdown">
+  <button type="button" class="tattoo-toggle" aria-expanded="false" aria-controls="tattoo-submenu">
+    Tetování <span class="dropdown-arrow">⌄</span>
+  </button>
+
+  <ul class="tattoo-submenu" id="tattoo-submenu">
+    <li><a href="#tattoo">Barevné tetování</a></li>
+    <li><a href="#black-tattoo">Černobílé tetování</a></li>
+    <li><a href="#cover-tattoo">Cover/předělávky</a></li>
+  </ul>
+</li>
+
         <li><a href="#piercing">Piercing</a></li>
         <li><a href="#pricing">Ceník</a></li>
         <li><a href="#info">Info</a></li>
@@ -1665,8 +1816,8 @@ gtag('config', 'G-ZJ17Y6NYSJ');
 
 </div>
 
-  <div class="section-title">
-    <h2>Černobílé tetování</h2>
+  <div class="section-title" id="black-tattoo">
+  <h2>Černobílé tetování</h2>
 </div>
 
 <div class="gallery">
@@ -1705,7 +1856,7 @@ gtag('config', 'G-ZJ17Y6NYSJ');
 
 </div>
 
-  <div class="section-title">
+  <div class="section-title" id="cover-tattoo">
   <h2>Cover/předělávky</h2>
 </div>
 
@@ -2254,34 +2405,55 @@ scrollLinks.forEach(link => {
 
 </script>
 
-  <script>
+  
+<script>
 const hamburger = document.getElementById("hamburger");
 const menu = document.querySelector("nav ul");
 
 const iconMenu = hamburger.querySelector(".icon-menu");
 const iconClose = hamburger.querySelector(".icon-close");
 
-hamburger.addEventListener("click", () => {
-  menu.classList.toggle("open");
+const tattooToggle = document.querySelector(".tattoo-toggle");
+const tattooSubmenu = document.querySelector(".tattoo-submenu");
 
-  if (menu.classList.contains("open")) {
-    iconMenu.style.display = "none";
-    iconClose.style.display = "inline";
-  } else {
-    iconMenu.style.display = "inline";
-    iconClose.style.display = "none";
+function closeMobileMenu() {
+  menu.classList.remove("open");
+  tattooSubmenu.classList.remove("open");
+  tattooToggle.setAttribute("aria-expanded", "false");
+
+  iconMenu.style.display = "inline";
+  iconClose.style.display = "none";
+}
+
+// Otevření a zavření hamburgeru
+hamburger.addEventListener("click", () => {
+  const isOpen = menu.classList.toggle("open");
+
+  iconMenu.style.display = isOpen ? "none" : "inline";
+  iconClose.style.display = isOpen ? "inline" : "none";
+
+  if (!isOpen) {
+    tattooSubmenu.classList.remove("open");
+    tattooToggle.setAttribute("aria-expanded", "false");
   }
 });
 
-// Zavřít po kliknutí na položku
+// Rozbalení podmenu Tetování na mobilu
+tattooToggle.addEventListener("click", () => {
+  if (window.innerWidth > 600) return;
+
+  const isOpen = tattooSubmenu.classList.toggle("open");
+  tattooToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+// Zavření menu po kliknutí na odkaz
 menu.querySelectorAll("a").forEach(link => {
   link.addEventListener("click", () => {
-    menu.classList.remove("open");
-    iconMenu.style.display = "inline";
-    iconClose.style.display = "none";
+    closeMobileMenu();
   });
 });
 </script>
+
 
 
 <div id="cookie-banner">
