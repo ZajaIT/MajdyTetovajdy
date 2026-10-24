@@ -238,7 +238,13 @@ nav li:hover {
 }
 
 .tattoo-submenu {
-  display: none;
+  display: flex;
+flex-direction: column;
+opacity: 0;
+visibility: hidden;
+pointer-events: none;
+margin-top: 8px;
+transition: opacity .25s ease, margin-top .25s ease, visibility .25s ease;
   position: absolute;
   top: 100%;
   left: 50%;
@@ -255,6 +261,7 @@ nav li:hover {
   font-size: 12px;
   letter-spacing: 1px;
   white-space: nowrap;
+  text-align: center;
 }
 
 .tattoo-submenu a {
@@ -269,11 +276,14 @@ nav li:hover {
   background: #f7f7f7;
 }
 
-/* PC – otevření při najetí myší */
+
 @media (min-width: 601px) {
   .tattoo-dropdown:hover .tattoo-submenu,
   .tattoo-dropdown:focus-within .tattoo-submenu {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    margin-top: 0;
   }
 }
 
@@ -1589,6 +1599,9 @@ nav ul.tattoo-submenu {
   nav ul.tattoo-submenu.open {
     height: auto;
     left: auto;
+    opacity: 1;
+visibility: visible;
+pointer-events: auto;
   }
 }
 
