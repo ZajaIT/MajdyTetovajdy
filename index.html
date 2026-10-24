@@ -1674,9 +1674,9 @@ gtag('config', 'G-ZJ17Y6NYSJ');
         <li><a href="#about">O mně</a></li>
         
 <li class="tattoo-dropdown">
-  <button type="button" class="tattoo-toggle" aria-expanded="false" aria-controls="tattoo-submenu">
-   Tetování <span class="dropdown-arrow"></span>
-  </button>
+  <a href="#tattoo" class="tattoo-toggle" aria-expanded="false" aria-controls="tattoo-submenu">
+  Tetování <span class="dropdown-arrow"></span>
+</a>
 
   <ul class="tattoo-submenu" id="tattoo-submenu">
     <li><a href="#tattoo">Barevné tetování</a></li>
@@ -2459,13 +2459,17 @@ hamburger.addEventListener("click", () => {
   }
 });
 
+
 // Rozbalení podmenu Tetování na mobilu
-tattooToggle.addEventListener("click", () => {
+tattooToggle.addEventListener("click", (event) => {
   if (window.innerWidth > 600) return;
+
+  event.preventDefault();
 
   const isOpen = tattooSubmenu.classList.toggle("open");
   tattooToggle.setAttribute("aria-expanded", String(isOpen));
 });
+
 
 // Zavření menu po kliknutí na odkaz
 menu.querySelectorAll("a").forEach(link => {
