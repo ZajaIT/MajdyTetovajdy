@@ -2471,12 +2471,22 @@ tattooToggle.addEventListener("click", (event) => {
 });
 
 
+
 // Zavření menu po kliknutí na odkaz
 menu.querySelectorAll("a").forEach(link => {
   link.addEventListener("click", () => {
+
+    if (
+      link.classList.contains("tattoo-toggle") &&
+      window.innerWidth <= 600
+    ) {
+      return;
+    }
+
     closeMobileMenu();
   });
 });
+
 </script>
 
 
