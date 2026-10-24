@@ -219,11 +219,19 @@ nav li:hover {
   cursor: pointer;
 }
 
+
 .dropdown-arrow {
-  font-size: 19px;
-  line-height: 1;
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
   transition: transform .3s ease;
+  margin-left: 3px;
+  margin-top: -4px;
 }
+
 
 .tattoo-dropdown {
   position: relative;
@@ -308,7 +316,7 @@ nav li:hover {
   }
 
   .tattoo-dropdown:has(.tattoo-submenu.open) .dropdown-arrow {
-    transform: rotate(180deg);
+    transform: rotate(225deg);
   }
 }
 
@@ -1654,7 +1662,7 @@ gtag('config', 'G-ZJ17Y6NYSJ');
         
 <li class="tattoo-dropdown">
   <button type="button" class="tattoo-toggle" aria-expanded="false" aria-controls="tattoo-submenu">
-    Tetování <span class="dropdown-arrow">⌄</span>
+   Tetování <span class="dropdown-arrow"></span>
   </button>
 
   <ul class="tattoo-submenu" id="tattoo-submenu">
