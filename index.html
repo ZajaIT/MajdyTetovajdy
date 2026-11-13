@@ -360,9 +360,31 @@ transition: opacity .25s ease, margin-top .25s ease, visibility .25s ease;
   transform: scaleX(1);
 }
 
+/* DOVOLENÁ – PC */
+
+.holiday-banner {
+  width: 100%;
+  background: #fff;
+  padding: 5px 0;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  z-index: 999;
+}
+
+.holiday-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 90px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
     /* HERO */
 
     .hero {
+  margin-top: 50px;
   height: 100vh;
   width: 100%;
   background-image: url("hero-fotka.webp");
@@ -374,7 +396,6 @@ transition: opacity .25s ease, margin-top .25s ease, visibility .25s ease;
   justify-content: flex-start;
   text-align: center;
   scroll-margin-top: 90px;
-  margin-top: -35px;
 }
 
 .hero-content {
@@ -1719,6 +1740,11 @@ gtag('config', 'G-ZJ17Y6NYSJ');
   </div>
 </header>
 
+<!-- DOVOLENÁ -->
+<div class="holiday-banner">
+  <img src="dovolena-pc.webp" alt="Dovolená 23. 12. – 3. 1.">
+</div>
+
 <!-- HERO -->
 
 <section class="hero" id="home">
@@ -2571,7 +2597,6 @@ if (localStorage.getItem("cookieConsent") === "accepted") {
   
 </body>
 </html>
-
 
 
 
